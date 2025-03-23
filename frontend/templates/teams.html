@@ -1,0 +1,316 @@
+<div class="container mt-4 mb-5">
+  <!-- Header section with statistics -->
+  <div class="bg-light rounded-lg p-4 mb-4 shadow-sm">
+    <div class="row">
+      <div class="col-md-8">
+        <h2 class="mb-2">Timovi</h2>
+        <p class="text-muted mb-0">Pregled i upravljanje timovima u rukometnoj ligi</p>
+      </div>
+      <div class="col-md-4 text-right">
+        <button class="btn btn-info" data-toggle="modal" data-target="#addTeamModal">
+          <i class="fas fa-plus-circle mr-2"></i> Dodaj novi tim
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Statistics cards -->
+  <div class="row mb-4">
+    <div class="col-md-3 col-sm-6 mb-3">
+      <div class="card stats-card h-100">
+        <div class="card-body text-center">
+          <div class="value">8</div>
+          <div class="label">Ukupno timova</div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6 mb-3">
+      <div class="card stats-card h-100">
+        <div class="card-body text-center">
+          <div class="value">5</div>
+          <div class="label">Seniorski timovi</div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6 mb-3">
+      <div class="card stats-card h-100">
+        <div class="card-body text-center">
+          <div class="value">2</div>
+          <div class="label">Ženski timovi</div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6 mb-3">
+      <div class="card stats-card h-100">
+        <div class="card-body text-center">
+          <div class="value">1</div>
+          <div class="label">Junior timovi</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Search and filter -->
+  <div class="card mb-4">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-8 mb-3 mb-md-0">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text bg-white">
+                <i class="fas fa-search text-muted"></i>
+              </span>
+            </div>
+            <input type="text" class="form-control border-left-0" placeholder="Pretraži timove...">
+            <div class="input-group-append">
+              <button class="btn btn-info" type="button">Pretraži</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <select class="form-control">
+            <option>Sve kategorije</option>
+            <option>Seniorski timovi</option>
+            <option>Junior timovi</option>
+            <option>Ženski timovi</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Teams list -->
+  <div class="row">
+    <!-- Team Card 1 -->
+    <div class="col-md-4 col-sm-6 mb-4">
+      <div class="card h-100 team-card">
+        <div class="card-header bg-light text-center py-3">
+          <h5 class="card-title mb-0">Rukometni Klub Bosna</h5>
+        </div>
+        <div class="card-body">
+          <div class="text-center mb-4">
+            <div class="team-logo mb-3">
+              <img src="assets/images/logos/rk-bosna.png" alt="RK Bosna Logo" class="img-fluid team-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <i class="fas fa-shield-alt fa-3x text-info logo-fallback"></i>
+            </div>
+            <span class="badge badge-info mb-2">Senior Men</span>
+          </div>
+          <div class="team-details">
+            <p class="card-text">
+              <i class="fas fa-map-marker-alt text-muted mr-2"></i> <strong>Lokacija:</strong> Sarajevo<br>
+              <i class="fas fa-calendar-alt text-muted mr-2"></i> <strong>Osnovan:</strong> 1948<br>
+              <i class="fas fa-users text-muted mr-2"></i> <strong>Igrači:</strong> 23<br>
+            </p>
+          </div>
+        </div>
+        <div class="card-footer bg-transparent">
+          <div class="btn-group btn-block">
+            <a href="#" class="btn btn-outline-info">
+              <i class="fas fa-eye mr-1"></i> Pregled
+            </a>
+            <a href="#" class="btn btn-outline-secondary">
+              <i class="fas fa-edit mr-1"></i> Izmijeni
+            </a>
+            <a href="#" class="btn btn-outline-danger">
+              <i class="fas fa-trash-alt mr-1"></i> Obriši
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Team Card 2 -->
+    <div class="col-md-4 col-sm-6 mb-4">
+      <div class="card h-100 team-card">
+        <div class="card-header bg-light text-center py-3">
+          <h5 class="card-title mb-0">HRK Izviđač</h5>
+        </div>
+        <div class="card-body">
+          <div class="text-center mb-4">
+            <div class="team-logo mb-3">
+              <img src="assets/images/logos/hrk-izvidjac.png" alt="HRK Izviđač Logo" class="img-fluid team-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <i class="fas fa-shield-alt fa-3x text-info logo-fallback"></i>
+            </div>
+            <span class="badge badge-info mb-2">Senior Men</span>
+          </div>
+          <div class="team-details">
+            <p class="card-text">
+              <i class="fas fa-map-marker-alt text-muted mr-2"></i> <strong>Lokacija:</strong> Ljubuški<br>
+              <i class="fas fa-calendar-alt text-muted mr-2"></i> <strong>Osnovan:</strong> 1956<br>
+              <i class="fas fa-users text-muted mr-2"></i> <strong>Igrači:</strong> 21<br>
+            </p>
+          </div>
+        </div>
+        <div class="card-footer bg-transparent">
+          <div class="btn-group btn-block">
+            <a href="#" class="btn btn-outline-info">
+              <i class="fas fa-eye mr-1"></i> Pregled
+            </a>
+            <a href="#" class="btn btn-outline-secondary">
+              <i class="fas fa-edit mr-1"></i> Izmijeni
+            </a>
+            <a href="#" class="btn btn-outline-danger">
+              <i class="fas fa-trash-alt mr-1"></i> Obriši
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Team Card 3 -->
+    <div class="col-md-4 col-sm-6 mb-4">
+      <div class="card h-100 team-card">
+        <div class="card-header bg-light text-center py-3">
+          <h5 class="card-title mb-0">RK Krivaja</h5>
+        </div>
+        <div class="card-body">
+          <div class="text-center mb-4">
+            <div class="team-logo mb-3">
+              <img src="assets/images/logos/rk-krivaja.png" alt="RK Krivaja Logo" class="img-fluid team-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <i class="fas fa-shield-alt fa-3x text-info logo-fallback"></i>
+            </div>
+            <span class="badge badge-info mb-2">Senior Men</span>
+          </div>
+          <div class="team-details">
+            <p class="card-text">
+              <i class="fas fa-map-marker-alt text-muted mr-2"></i> <strong>Lokacija:</strong> Zavidovići<br>
+              <i class="fas fa-calendar-alt text-muted mr-2"></i> <strong>Osnovan:</strong> 1952<br>
+              <i class="fas fa-users text-muted mr-2"></i> <strong>Igrači:</strong> 22<br>
+            </p>
+          </div>
+        </div>
+        <div class="card-footer bg-transparent">
+          <div class="btn-group btn-block">
+            <a href="#" class="btn btn-outline-info">
+              <i class="fas fa-eye mr-1"></i> Pregled
+            </a>
+            <a href="#" class="btn btn-outline-secondary">
+              <i class="fas fa-edit mr-1"></i> Izmijeni
+            </a>
+            <a href="#" class="btn btn-outline-danger">
+              <i class="fas fa-trash-alt mr-1"></i> Obriši
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Additional team cards follow the same pattern -->
+    <!-- Team Card 4 -->
+    <div class="col-md-4 col-sm-6 mb-4">
+      <div class="card h-100 team-card">
+        <div class="card-header bg-light text-center py-3">
+          <h5 class="card-title mb-0">ŽRK Hadžići</h5>
+        </div>
+        <div class="card-body">
+          <div class="text-center mb-4">
+            <div class="team-logo mb-3">
+              <img src="assets/images/logos/zrk-hadzici.png" alt="ŽRK Hadžići Logo" class="img-fluid team-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <i class="fas fa-shield-alt fa-3x text-info logo-fallback"></i>
+            </div>
+            <span class="badge badge-info mb-2">Women's Team</span>
+          </div>
+          <div class="team-details">
+            <p class="card-text">
+              <i class="fas fa-map-marker-alt text-muted mr-2"></i> <strong>Lokacija:</strong> Hadžići<br>
+              <i class="fas fa-calendar-alt text-muted mr-2"></i> <strong>Osnovan:</strong> 1972<br>
+              <i class="fas fa-users text-muted mr-2"></i> <strong>Igrači:</strong> 19<br>
+            </p>
+          </div>
+        </div>
+        <div class="card-footer bg-transparent">
+          <div class="btn-group btn-block">
+            <a href="#" class="btn btn-outline-info">
+              <i class="fas fa-eye mr-1"></i> Pregled
+            </a>
+            <a href="#" class="btn btn-outline-secondary">
+              <i class="fas fa-edit mr-1"></i> Izmijeni
+            </a>
+            <a href="#" class="btn btn-outline-danger">
+              <i class="fas fa-trash-alt mr-1"></i> Obriši
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Additional team cards follow the same pattern -->
+  </div>
+
+  <!-- Pagination -->
+  <nav aria-label="Page navigation" class="mt-4">
+    <ul class="pagination justify-content-center">
+      <li class="page-item disabled">
+        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">
+          <i class="fas fa-chevron-left"></i>
+        </a>
+      </li>
+      <li class="page-item active"><a class="page-link" href="#">1</a></li>
+      <li class="page-item"><a class="page-link" href="#">2</a></li>
+      <li class="page-item"><a class="page-link" href="#">3</a></li>
+      <li class="page-item">
+        <a class="page-link" href="#">
+          <i class="fas fa-chevron-right"></i>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Add Team Modal -->
+  <div class="modal fade" id="addTeamModal" tabindex="-1" aria-labelledby="addTeamModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="addTeamModalLabel">
+            <i class="fas fa-plus-circle mr-2 text-info"></i>
+            Dodaj novi tim
+          </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="addTeamForm">
+            <div class="form-group">
+              <label for="teamName">Naziv tima</label>
+              <input type="text" class="form-control" id="teamName" required>
+            </div>
+            <div class="form-group">
+              <label for="teamLocation">Lokacija</label>
+              <input type="text" class="form-control" id="teamLocation" required>
+            </div>
+            <div class="form-group">
+              <label for="foundedYear">Godina osnivanja</label>
+              <input type="number" class="form-control" id="foundedYear" required>
+            </div>
+            <div class="form-group">
+              <label for="teamCategory">Kategorija</label>
+              <select class="form-control" id="teamCategory" required>
+                <option value="">Odaberi kategoriju</option>
+                <option value="senior_men">Seniorski tim (M)</option>
+                <option value="senior_women">Seniorski tim (Ž)</option>
+                <option value="junior_men">Junior tim (M)</option>
+                <option value="junior_women">Junior tim (Ž)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="teamLogo">Logo tima</label>
+              <div class="custom-file">
+                <input type="file" class="custom-file-input" id="teamLogo" accept="image/*">
+                <label class="custom-file-label" for="teamLogo">Odaberi logo</label>
+              </div>
+              <small class="form-text text-muted">Preporučena veličina: 200x200px, format: PNG ili JPG.</small>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Odustani</button>
+          <button type="button" class="btn btn-info">
+            <i class="fas fa-save mr-1"></i> Sačuvaj tim
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
