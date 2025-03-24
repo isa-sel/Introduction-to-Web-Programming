@@ -1,0 +1,499 @@
+body {
+  font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Layout components */
+main#spapp {
+  flex: 1;
+  min-height: calc(100vh - 140px);
+  padding-bottom: 20px;
+}
+
+footer {
+  background-color: #1a3a6d;
+  color: #fff;
+  padding: 20px 0;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+/* Navbar styling */
+.navbar {
+  background: linear-gradient(135deg, #1a3a6d 0%, #2a5298 100%) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 0.8rem 1rem;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #fff !important;
+  padding: 5px 15px;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  padding: 0.8rem 1rem;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+  color: #fff !important;
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Home section */
+.home-section {
+  background: linear-gradient(135deg, #1a3a6d 0%, #2a5298 100%);
+  color: #fff;
+  padding: 120px 0 80px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.home-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('https://images.unsplash.com/photo-1554533899-689d60dbaaf6');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.1;
+  z-index: 0;
+}
+
+.home-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+.home-section h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.home-section p {
+  font-size: 1.4rem;
+  max-width: 700px;
+  margin: 0 auto 30px;
+  opacity: 0.9;
+}
+
+/* Cards styling */
+.card {
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  font-weight: 600;
+  padding: 1rem 1.25rem;
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-footer {
+  background-color: rgba(0, 0, 0, 0.01);
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 1rem 1.25rem;
+}
+
+.card .card-title {
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #1a3a6d;
+}
+
+/* Button styling */
+.btn {
+  font-weight: 500;
+  padding: 0.5rem 1.25rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.btn-info {
+  background-color: #2a5298;
+  border-color: #2a5298;
+}
+
+.btn-info:hover, .btn-info:focus {
+  background-color: #1a3a6d;
+  border-color: #1a3a6d;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(42, 82, 152, 0.3);
+}
+
+.btn-outline-info {
+  color: #2a5298;
+  border-color: #2a5298;
+}
+
+.btn-outline-info:hover {
+  background-color: #2a5298;
+  color: #fff;
+}
+
+/* Table styling */
+.table {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.table th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  color: #495057;
+  border-top: none;
+}
+
+.table-hover tbody tr:hover {
+  background-color: rgba(42, 82, 152, 0.03);
+}
+
+/* Form styling */
+.form-control {
+  border-radius: 6px;
+  padding: 0.6rem 1rem;
+  border: 1px solid #ced4da;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #2a5298;
+  box-shadow: 0 0 0 0.2rem rgba(42, 82, 152, 0.25);
+}
+
+label {
+  font-weight: 500;
+  color: #495057;
+  margin-bottom: 0.5rem;
+}
+
+/* Modal styling */
+.modal-header {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.modal-content {
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Pagination */
+.pagination .page-link {
+  color: #2a5298;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin: 0 3px;
+  border-radius: 4px;
+}
+
+.pagination .page-item.active .page-link {
+  background-color: #2a5298;
+  border-color: #2a5298;
+}
+
+/* Login and Register pages */
+.card-header.bg-info {
+  background: linear-gradient(135deg, #1a3a6d 0%, #2a5298 100%) !important;
+}
+
+/* Additional components */
+.badge {
+  padding: 0.5em 0.75em;
+  font-weight: 500;
+  border-radius: 4px;
+}
+
+/* Section headings */
+section h2 {
+  color: #1a3a6d;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+section p.lead {
+  color: #6c757d;
+  margin-bottom: 2rem;
+}
+
+/* Search and filter components */
+.input-group {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.input-group-append .btn {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+/* Stats and Dashboard elements */
+.stats-card {
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.stats-card .value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2a5298;
+  margin-bottom: 0.5rem;
+}
+
+.stats-card .label {
+  font-size: 1rem;
+  color: #6c757d;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.match-item {
+  transition: all 0.2s ease;
+}
+
+.match-item:hover {
+  background-color: rgba(0, 0, 0, 0.01);
+}
+
+.match-vs, .match-score {
+  min-width: 80px;
+  text-align: center;
+}
+
+.team-name {
+  min-width: 120px;
+}
+
+@media (max-width: 768px) {
+  .team-name {
+    min-width: auto;
+    font-size: 0.9rem;
+  }
+  
+  .match-vs, .match-score {
+    min-width: 60px;
+  }
+}
+
+.team-card .team-logo {
+  width: 80px;
+  height: 80px;
+  background-color: rgba(42, 82, 152, 0.1);
+  border-radius: 50%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.team-card {
+  transition: all 0.3s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.venue-image {
+  position: relative;
+  height: 160px;
+  overflow: hidden;
+}
+
+.venue-image-placeholder {
+  height: 100%;
+}
+
+.venue-capacity {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  z-index: 1;
+}
+
+.venue-card {
+  transition: all 0.3s ease;
+}
+
+.venue-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.opacity-50 {
+  opacity: 0.5;
+}
+
+.font-weight-medium {
+  font-weight: 500;
+}
+
+.avatar {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.badge.border {
+  border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+.table td, .table th {
+  vertical-align: middle;
+}
+
+.custom-file-label::after {
+  content: "Pretraži";
+}
+
+.team-logo {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(42, 82, 152, 0.05);
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.team-logo-img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+.logo-fallback {
+  display: none; /* Hidden by default, shown when image fails to load */
+}
+
+.team-card {
+  transition: all 0.3s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.standings-table td, .standings-table th {
+  vertical-align: middle;
+}
+
+.promotion-zone {
+  background-color: rgba(40, 167, 69, 0.05);
+}
+
+.relegation-zone {
+  background-color: rgba(220, 53, 69, 0.05);
+}
+
+.team-mini-logo {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: rgba(42, 82, 152, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.team-mini-logo img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+.badge-success {
+  background-color: #28a745;
+}
+
+.badge-danger {
+  background-color: #dc3545;
+}
+
+.badge-secondary {
+  background-color: #6c757d;
+}
+
+.legend-item {
+  font-size: 0.8rem;
+}
+
+.legend-item .badge {
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+
+/* For custom file input */
+.custom-file-label::after {
+  content: "Pretraži";
+}
+
+/* Custom Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+/* Responsiveness improvements */
+@media (max-width: 768px) {
+  .home-section {
+    padding: 80px 0 60px;
+  }
+  
+  .home-section h1 {
+    font-size: 2.5rem;
+  }
+  
+  .home-section p {
+    font-size: 1.1rem;
+  }
+  
+  .btn-group.btn-block .btn {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.85rem;
+  }
+  
+  .table {
+    font-size: 0.9rem;
+  }
+}
