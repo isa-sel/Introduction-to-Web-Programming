@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap and other styles -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="css/spapp.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Rukometni Centar</title>
+    
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+          <a class="navbar-brand" href="#home">RC</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#spapNavbar" aria-controls="spapNavbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="spapNavbar">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#home">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#teams">Teams</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#players">Players</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#matches">Matches</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#standings">Tabela</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#venues">Venues</a>
+              </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#login">Login</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#register">Register</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+    <main id="spapp" role="main">
+      <section id="home" data-load="templates/home.html"></section>
+      <section id="teams" data-load="templates/teams.html"></section>
+      <section id="players" data-load="templates/players.html"></section>
+      <section id="matches" data-load="templates/matches.html"></section>
+      <section id="standings" data-load="templates/standings.html"></section>
+      <section id="venues" data-load="templates/venues.html"></section>
+      <section id="login" data-load="templates/login.html"></section>
+      <section id="register" data-load="templates/register.html"></section>
+    </main>
+
+    <footer class="text-center">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4 text-md-left mb-3 mb-md-0">
+              <h5 class="mb-3">Rukometni Centar</h5>
+              <p class="mb-0">Upravljanje rukometnom ligom</p>
+            </div>
+            <div class="col-md-4 mb-3 mb-md-0">
+              <h5 class="mb-3">Brzi linkovi</h5>
+              <ul class="list-unstyled">
+                <li><a href="#teams" class="text-white">Timovi</a></li>
+                <li><a href="#players" class="text-white">Igrači</a></li>
+                <li><a href="#matches" class="text-white">Utakmice</a></li>
+              </ul>
+            </div>
+            <div class="col-md-4 text-md-right">
+              <h5 class="mb-3">Kontakt</h5>
+              <p class="mb-0">info@rukometnicentar.com</p>
+            </div>
+          </div>
+          <div class="mt-4">
+            <p class="mb-0">&copy; 2025 Rukometni Centar. Sva prava zadržana.</p>
+          </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.spapp.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
