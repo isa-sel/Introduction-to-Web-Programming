@@ -1,0 +1,384 @@
+<div class="container mt-4 mb-5">
+  <!-- Header section with statistics -->
+  <div class="bg-light rounded-lg p-4 mb-4 shadow-sm">
+    <div class="row">
+      <div class="col-md-8">
+        <h2 class="mb-2">Dvorane</h2>
+        <p class="text-muted mb-0">Pregled i upravljanje dvoranama za rukometne utakmice</p>
+      </div>
+      <div class="col-md-4 text-right">
+        <button class="btn btn-info" data-toggle="modal" data-target="#addVenueModal">
+          <i class="fas fa-plus-circle mr-2"></i> Dodaj novu dvoranu
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Venue Statistics Row -->
+  <div class="row mb-4">
+    <div class="col-md-3 col-sm-6 mb-3">
+      <div class="card stats-card h-100">
+        <div class="card-body text-center">
+          <div class="value">6</div>
+          <div class="label">Ukupno dvorana</div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6 mb-3">
+      <div class="card stats-card h-100">
+        <div class="card-body text-center">
+          <div class="value">21,500</div>
+          <div class="label">Ukupni kapacitet</div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6 mb-3">
+      <div class="card stats-card h-100">
+        <div class="card-body text-center">
+          <div class="value">66</div>
+          <div class="label">Planirane utakmice</div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6 mb-3">
+      <div class="card stats-card h-100">
+        <div class="card-body text-center">
+          <div class="value">7</div>
+          <div class="label">Gradova</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Search and Filter -->
+  <div class="card mb-4">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-8 mb-3 mb-md-0">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text bg-white">
+                <i class="fas fa-search text-muted"></i>
+              </span>
+            </div>
+            <input type="text" class="form-control border-left-0" placeholder="Pretraži dvorane...">
+            <div class="input-group-append">
+              <button class="btn btn-info" type="button">Pretraži</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <select class="form-control">
+            <option>Svi gradovi</option>
+            <option>Sarajevo</option>
+            <option>Tuzla</option>
+            <option>Zenica</option>
+            <option>Mostar</option>
+            <option>Ljubuški</option>
+            <option>Zavidovići</option>
+            <option>Hadžići</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Venues List -->
+  <div class="row">
+    <!-- Venue Card 1 -->
+    <div class="col-lg-4 col-md-6 mb-4">
+      <div class="card h-100 venue-card">
+        <div class="venue-image">
+          <div class="venue-image-placeholder bg-light d-flex align-items-center justify-content-center py-5">
+            <i class="fas fa-landmark fa-4x text-info opacity-50"></i>
+          </div>
+          <div class="venue-capacity">
+            <span class="badge badge-pill badge-info">
+              <i class="fas fa-users mr-1"></i> 6,000 mjesta
+            </span>
+          </div>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Dvorana Skenderija</h5>
+          <p class="card-text">
+            <i class="fas fa-map-marker-alt text-muted mr-2"></i> <strong>Lokacija:</strong> Sarajevo<br>
+            <i class="fas fa-map-marked-alt text-muted mr-2"></i> <strong>Adresa:</strong> Terezija bb, Sarajevo<br>
+            <i class="fas fa-list-ul text-muted mr-2"></i> <strong>Sadržaji:</strong> Svlačionice, VIP zona, Medijska sala
+          </p>
+        </div>
+        <div class="card-footer bg-transparent">
+          <div class="btn-group btn-block">
+            <a href="#" class="btn btn-outline-info">
+              <i class="fas fa-eye mr-1"></i> Pregled
+            </a>
+            <a href="#" class="btn btn-outline-secondary">
+              <i class="fas fa-edit mr-1"></i> Izmijeni
+            </a>
+            <a href="#" class="btn btn-outline-danger">
+              <i class="fas fa-trash-alt mr-1"></i> Obriši
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Venue Card 2 -->
+    <div class="col-lg-4 col-md-6 mb-4">
+      <div class="card h-100 venue-card">
+        <div class="venue-image">
+          <div class="venue-image-placeholder bg-light d-flex align-items-center justify-content-center py-5">
+            <i class="fas fa-landmark fa-4x text-info opacity-50"></i>
+          </div>
+          <div class="venue-capacity">
+            <span class="badge badge-pill badge-info">
+              <i class="fas fa-users mr-1"></i> 2,500 mjesta
+            </span>
+          </div>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Gradska dvorana Zavidovići</h5>
+          <p class="card-text">
+            <i class="fas fa-map-marker-alt text-muted mr-2"></i> <strong>Lokacija:</strong> Zavidovići<br>
+            <i class="fas fa-map-marked-alt text-muted mr-2"></i> <strong>Adresa:</strong> Radnička 3, Zavidovići<br>
+            <i class="fas fa-list-ul text-muted mr-2"></i> <strong>Sadržaji:</strong> Svlačionice, Kafeterija
+          </p>
+        </div>
+        <div class="card-footer bg-transparent">
+          <div class="btn-group btn-block">
+            <a href="#" class="btn btn-outline-info">
+              <i class="fas fa-eye mr-1"></i> Pregled
+            </a>
+            <a href="#" class="btn btn-outline-secondary">
+              <i class="fas fa-edit mr-1"></i> Izmijeni
+            </a>
+            <a href="#" class="btn btn-outline-danger">
+              <i class="fas fa-trash-alt mr-1"></i> Obriši
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Venue Card 3 -->
+    <div class="col-lg-4 col-md-6 mb-4">
+      <div class="card h-100 venue-card">
+        <div class="venue-image">
+          <div class="venue-image-placeholder bg-light d-flex align-items-center justify-content-center py-5">
+            <i class="fas fa-landmark fa-4x text-info opacity-50"></i>
+          </div>
+          <div class="venue-capacity">
+            <span class="badge badge-pill badge-info">
+              <i class="fas fa-users mr-1"></i> 1,800 mjesta
+            </span>
+          </div>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Sportska dvorana Hadžići</h5>
+          <p class="card-text">
+            <i class="fas fa-map-marker-alt text-muted mr-2"></i> <strong>Lokacija:</strong> Hadžići<br>
+            <i class="fas fa-map-marked-alt text-muted mr-2"></i> <strong>Adresa:</strong> Zlatnih ljiljana 24, Hadžići<br>
+            <i class="fas fa-list-ul text-muted mr-2"></i> <strong>Sadržaji:</strong> Svlačionice, Parking
+          </p>
+        </div>
+        <div class="card-footer bg-transparent">
+          <div class="btn-group btn-block">
+            <a href="#" class="btn btn-outline-info">
+              <i class="fas fa-eye mr-1"></i> Pregled
+            </a>
+            <a href="#" class="btn btn-outline-secondary">
+              <i class="fas fa-edit mr-1"></i> Izmijeni
+            </a>
+            <a href="#" class="btn btn-outline-danger">
+              <i class="fas fa-trash-alt mr-1"></i> Obriši
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Venue Card 4 -->
+    <div class="col-lg-4 col-md-6 mb-4">
+      <div class="card h-100 venue-card">
+        <div class="venue-image">
+          <div class="venue-image-placeholder bg-light d-flex align-items-center justify-content-center py-5">
+            <i class="fas fa-landmark fa-4x text-info opacity-50"></i>
+          </div>
+          <div class="venue-capacity">
+            <span class="badge badge-pill badge-info">
+              <i class="fas fa-users mr-1"></i> 5,200 mjesta
+            </span>
+          </div>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Arena Zenica</h5>
+          <p class="card-text">
+            <i class="fas fa-map-marker-alt text-muted mr-2"></i> <strong>Lokacija:</strong> Zenica<br>
+            <i class="fas fa-map-marked-alt text-muted mr-2"></i> <strong>Adresa:</strong> Bilmišće bb, Zenica<br>
+            <i class="fas fa-list-ul text-muted mr-2"></i> <strong>Sadržaji:</strong> Svlačionice, VIP zona, Restoran, Medijska sala
+          </p>
+        </div>
+        <div class="card-footer bg-transparent">
+          <div class="btn-group btn-block">
+            <a href="#" class="btn btn-outline-info">
+              <i class="fas fa-eye mr-1"></i> Pregled
+            </a>
+            <a href="#" class="btn btn-outline-secondary">
+              <i class="fas fa-edit mr-1"></i> Izmijeni
+            </a>
+            <a href="#" class="btn btn-outline-danger">
+              <i class="fas fa-trash-alt mr-1"></i> Obriši
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Venue Card 5 -->
+    <div class="col-lg-4 col-md-6 mb-4">
+      <div class="card h-100 venue-card">
+        <div class="venue-image">
+          <div class="venue-image-placeholder bg-light d-flex align-items-center justify-content-center py-5">
+            <i class="fas fa-landmark fa-4x text-info opacity-50"></i>
+          </div>
+          <div class="venue-capacity">
+            <span class="badge badge-pill badge-info">
+              <i class="fas fa-users mr-1"></i> 2,200 mjesta
+            </span>
+          </div>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Gradska dvorana Ljubuški</h5>
+          <p class="card-text">
+            <i class="fas fa-map-marker-alt text-muted mr-2"></i> <strong>Lokacija:</strong> Ljubuški<br>
+            <i class="fas fa-map-marked-alt text-muted mr-2"></i> <strong>Adresa:</strong> Kralja Tomislava 8, Ljubuški<br>
+            <i class="fas fa-list-ul text-muted mr-2"></i> <strong>Sadržaji:</strong> Svlačionice, Parking
+          </p>
+        </div>
+        <div class="card-footer bg-transparent">
+          <div class="btn-group btn-block">
+            <a href="#" class="btn btn-outline-info">
+              <i class="fas fa-eye mr-1"></i> Pregled
+            </a>
+            <a href="#" class="btn btn-outline-secondary">
+              <i class="fas fa-edit mr-1"></i> Izmijeni
+            </a>
+            <a href="#" class="btn btn-outline-danger">
+              <i class="fas fa-trash-alt mr-1"></i> Obriši
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Venue Card 6 -->
+    <div class="col-lg-4 col-md-6 mb-4">
+      <div class="card h-100 venue-card">
+        <div class="venue-image">
+          <div class="venue-image-placeholder bg-light d-flex align-items-center justify-content-center py-5">
+            <i class="fas fa-landmark fa-4x text-info opacity-50"></i>
+          </div>
+          <div class="venue-capacity">
+            <span class="badge badge-pill badge-info">
+              <i class="fas fa-users mr-1"></i> 3,800 mjesta
+            </span>
+          </div>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">MEJDAN Sports Center</h5>
+          <p class="card-text">
+            <i class="fas fa-map-marker-alt text-muted mr-2"></i> <strong>Lokacija:</strong> Tuzla<br>
+            <i class="fas fa-map-marked-alt text-muted mr-2"></i> <strong>Adresa:</strong> 15. Maja bb, Tuzla<br>
+            <i class="fas fa-list-ul text-muted mr-2"></i> <strong>Sadržaji:</strong> Svlačionice, VIP zona, Kafeterija
+          </p>
+        </div>
+        <div class="card-footer bg-transparent">
+          <div class="btn-group btn-block">
+            <a href="#" class="btn btn-outline-info">
+              <i class="fas fa-eye mr-1"></i> Pregled
+            </a>
+            <a href="#" class="btn btn-outline-secondary">
+              <i class="fas fa-edit mr-1"></i> Izmijeni
+            </a>
+            <a href="#" class="btn btn-outline-danger">
+              <i class="fas fa-trash-alt mr-1"></i> Obriši
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pagination -->
+  <nav aria-label="Page navigation" class="mt-4">
+    <ul class="pagination justify-content-center">
+      <li class="page-item disabled">
+        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">
+          <i class="fas fa-chevron-left"></i>
+        </a>
+      </li>
+      <li class="page-item active"><a class="page-link" href="#">1</a></li>
+      <li class="page-item"><a class="page-link" href="#">2</a></li>
+      <li class="page-item">
+        <a class="page-link" href="#">
+          <i class="fas fa-chevron-right"></i>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Add Venue Modal -->
+  <div class="modal fade" id="addVenueModal" tabindex="-1" aria-labelledby="addVenueModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="addVenueModalLabel">
+            <i class="fas fa-plus-circle mr-2 text-info"></i>
+            Dodaj novu dvoranu
+          </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="addVenueForm">
+            <div class="form-group">
+              <label for="venueName">Naziv dvorane</label>
+              <input type="text" class="form-control" id="venueName" required>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="venueLocation">Lokacija / Grad</label>
+                <input type="text" class="form-control" id="venueLocation" required>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="venueCapacity">Kapacitet</label>
+                <input type="number" class="form-control" id="venueCapacity" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="venueAddress">Adresa</label>
+              <input type="text" class="form-control" id="venueAddress" required>
+            </div>
+            <div class="form-group">
+              <label for="venueAmenities">Sadržaji</label>
+              <textarea class="form-control" id="venueAmenities" rows="3" placeholder="Opišite sadržaje (svlačionice, parking, itd.)"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="venueImage">Slika dvorane</label>
+              <div class="custom-file">
+                <input type="file" class="custom-file-input" id="venueImage">
+                <label class="custom-file-label" for="venueImage">Odaberi sliku</label>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Odustani</button>
+          <button type="button" class="btn btn-info">
+            <i class="fas fa-save mr-1"></i> Sačuvaj dvoranu
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

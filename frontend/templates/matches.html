@@ -1,0 +1,471 @@
+<div class="container mt-4 mb-5">
+  <!-- Header section with statistics -->
+  <div class="bg-light rounded-lg p-4 mb-4 shadow-sm">
+    <div class="row">
+      <div class="col-md-8">
+        <h2 class="mb-2">Utakmice</h2>
+        <p class="text-muted mb-0">Pregled nadolazećih i završenih utakmica rukometne lige</p>
+      </div>
+      <div class="col-md-4 text-right">
+        <button class="btn btn-info" data-toggle="modal" data-target="#addMatchModal">
+          <i class="fas fa-plus-circle mr-2"></i> Zakaži novu utakmicu
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Match Statistics Row -->
+  <div class="row mb-4">
+    <div class="col-md-3 col-sm-6 mb-3">
+      <div class="card stats-card h-100">
+        <div class="card-body text-center">
+          <div class="value">24</div>
+          <div class="label">Nadolazeće utakmice</div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6 mb-3">
+      <div class="card stats-card h-100">
+        <div class="card-body text-center">
+          <div class="value">42</div>
+          <div class="label">Završene utakmice</div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6 mb-3">
+      <div class="card stats-card h-100">
+        <div class="card-body text-center">
+          <div class="value">718</div>
+          <div class="label">Ukupno golova</div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6 mb-3">
+      <div class="card stats-card h-100">
+        <div class="card-body text-center">
+          <div class="value">6</div>
+          <div class="label">Aktivna dvorana</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Filter and Search -->
+  <div class="card mb-4">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-4 mb-3 mb-md-0">
+          <label class="small text-muted d-block mb-1">Status utakmice</label>
+          <select class="form-control">
+            <option>Sve utakmice</option>
+            <option>Nadolazeće utakmice</option>
+            <option>Završene utakmice</option>
+          </select>
+        </div>
+        <div class="col-md-4 mb-3 mb-md-0">
+          <label class="small text-muted d-block mb-1">Odaberi tim</label>
+          <select class="form-control">
+            <option>Svi timovi</option>
+            <option>RK Bosna</option>
+            <option>HRK Izviđač</option>
+            <option>RK Krivaja</option>
+            <option>ŽRK Hadžići</option>
+            <option>RK Čelik Junior</option>
+            <option>RK Sloboda</option>
+          </select>
+        </div>
+        <div class="col-md-4">
+          <label class="small text-muted d-block mb-1">Pretraži</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text bg-white">
+                <i class="fas fa-search text-muted"></i>
+              </span>
+            </div>
+            <input type="text" class="form-control border-left-0" placeholder="Pretraži utakmice...">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Upcoming Matches Section -->
+  <div class="card mb-4">
+    <div class="card-header d-flex justify-content-between align-items-center">
+      <h5 class="mb-0">
+        <i class="fas fa-calendar-alt text-info mr-2"></i>
+        Nadolazeće utakmice
+      </h5>
+      <span class="badge badge-info">3 utakmice</span>
+    </div>
+    <div class="card-body p-0">
+      <!-- Match Item 1 -->
+      <div class="match-item p-3 border-bottom">
+        <div class="row align-items-center">
+          <div class="col-md-2 text-center mb-3 mb-md-0">
+            <div class="text-info small">24. Mar, 2025</div>
+            <div class="badge badge-light">18:00</div>
+          </div>
+          <div class="col-md-7 mb-3 mb-md-0">
+            <div class="d-flex align-items-center justify-content-center">
+              <div class="text-right team-name mr-2">
+                <strong>RK Bosna</strong>
+                <div class="text-muted small">Domaćin</div>
+              </div>
+              <div class="match-vs mx-3">
+                <span class="badge badge-secondary py-2 px-3">VS</span>
+              </div>
+              <div class="text-left team-name ml-2">
+                <strong>HRK Izviđač</strong>
+                <div class="text-muted small">Gost</div>
+              </div>
+            </div>
+            <div class="text-center mt-2 location">
+              <i class="fas fa-map-marker-alt text-muted mr-1"></i>
+              <span class="small">Dvorana Skenderija, Sarajevo</span>
+            </div>
+          </div>
+          <div class="col-md-3 text-center">
+            <div class="btn-group btn-group-sm">
+              <button class="btn btn-outline-info">
+                <i class="fas fa-eye"></i>
+              </button>
+              <button class="btn btn-outline-secondary">
+                <i class="fas fa-edit"></i>
+              </button>
+              <button class="btn btn-outline-danger">
+                <i class="fas fa-times"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Match Item 2 -->
+      <div class="match-item p-3 border-bottom">
+        <div class="row align-items-center">
+          <div class="col-md-2 text-center mb-3 mb-md-0">
+            <div class="text-info small">25. Mar, 2025</div>
+            <div class="badge badge-light">19:30</div>
+          </div>
+          <div class="col-md-7 mb-3 mb-md-0">
+            <div class="d-flex align-items-center justify-content-center">
+              <div class="text-right team-name mr-2">
+                <strong>RK Krivaja</strong>
+                <div class="text-muted small">Domaćin</div>
+              </div>
+              <div class="match-vs mx-3">
+                <span class="badge badge-secondary py-2 px-3">VS</span>
+              </div>
+              <div class="text-left team-name ml-2">
+                <strong>RK Sloboda</strong>
+                <div class="text-muted small">Gost</div>
+              </div>
+            </div>
+            <div class="text-center mt-2 location">
+              <i class="fas fa-map-marker-alt text-muted mr-1"></i>
+              <span class="small">Gradska dvorana Zavidovići</span>
+            </div>
+          </div>
+          <div class="col-md-3 text-center">
+            <div class="btn-group btn-group-sm">
+              <button class="btn btn-outline-info">
+                <i class="fas fa-eye"></i>
+              </button>
+              <button class="btn btn-outline-secondary">
+                <i class="fas fa-edit"></i>
+              </button>
+              <button class="btn btn-outline-danger">
+                <i class="fas fa-times"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Match Item 3 -->
+      <div class="match-item p-3">
+        <div class="row align-items-center">
+          <div class="col-md-2 text-center mb-3 mb-md-0">
+            <div class="text-info small">27. Mar, 2025</div>
+            <div class="badge badge-light">18:30</div>
+          </div>
+          <div class="col-md-7 mb-3 mb-md-0">
+            <div class="d-flex align-items-center justify-content-center">
+              <div class="text-right team-name mr-2">
+                <strong>ŽRK Hadžići</strong>
+                <div class="text-muted small">Domaćin</div>
+              </div>
+              <div class="match-vs mx-3">
+                <span class="badge badge-secondary py-2 px-3">VS</span>
+              </div>
+              <div class="text-left team-name ml-2">
+                <strong>ŽRK Goražde</strong>
+                <div class="text-muted small">Gost</div>
+              </div>
+            </div>
+            <div class="text-center mt-2 location">
+              <i class="fas fa-map-marker-alt text-muted mr-1"></i>
+              <span class="small">Sportska dvorana Hadžići</span>
+            </div>
+          </div>
+          <div class="col-md-3 text-center">
+            <div class="btn-group btn-group-sm">
+              <button class="btn btn-outline-info">
+                <i class="fas fa-eye"></i>
+              </button>
+              <button class="btn btn-outline-secondary">
+                <i class="fas fa-edit"></i>
+              </button>
+              <button class="btn btn-outline-danger">
+                <i class="fas fa-times"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Past Matches Section -->
+  <div class="card mb-4">
+    <div class="card-header d-flex justify-content-between align-items-center">
+      <h5 class="mb-0">
+        <i class="fas fa-history text-secondary mr-2"></i>
+        Završene utakmice
+      </h5>
+      <span class="badge badge-secondary">3 utakmice</span>
+    </div>
+    <div class="card-body p-0">
+      <!-- Past Match Item 1 -->
+      <div class="match-item p-3 border-bottom">
+        <div class="row align-items-center">
+          <div class="col-md-2 text-center mb-3 mb-md-0">
+            <div class="text-secondary small">17. Mar, 2025</div>
+            <div class="badge badge-light">Završeno</div>
+          </div>
+          <div class="col-md-7 mb-3 mb-md-0">
+            <div class="d-flex align-items-center justify-content-center">
+              <div class="text-right team-name mr-2">
+                <strong>RK Bosna</strong>
+                <div class="text-muted small">Domaćin</div>
+              </div>
+              <div class="match-score mx-3">
+                <span class="badge badge-light py-2 px-3 border">
+                  <span class="text-success">32</span>
+                  <span class="text-muted px-1">:</span>
+                  <span class="text-danger">29</span>
+                </span>
+              </div>
+              <div class="text-left team-name ml-2">
+                <strong>RK Sloboda</strong>
+                <div class="text-muted small">Gost</div>
+              </div>
+            </div>
+            <div class="text-center mt-2 location">
+              <i class="fas fa-map-marker-alt text-muted mr-1"></i>
+              <span class="small">Dvorana Skenderija, Sarajevo</span>
+            </div>
+          </div>
+          <div class="col-md-3 text-center">
+            <div class="btn-group btn-group-sm">
+              <button class="btn btn-outline-info">
+                <i class="fas fa-chart-bar"></i>
+              </button>
+              <button class="btn btn-outline-secondary">
+                <i class="fas fa-file-alt"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Past Match Item 2 -->
+      <div class="match-item p-3 border-bottom">
+        <div class="row align-items-center">
+          <div class="col-md-2 text-center mb-3 mb-md-0">
+            <div class="text-secondary small">15. Mar, 2025</div>
+            <div class="badge badge-light">Završeno</div>
+          </div>
+          <div class="col-md-7 mb-3 mb-md-0">
+            <div class="d-flex align-items-center justify-content-center">
+              <div class="text-right team-name mr-2">
+                <strong>RK Čelik Junior</strong>
+                <div class="text-muted small">Domaćin</div>
+              </div>
+              <div class="match-score mx-3">
+                <span class="badge badge-light py-2 px-3 border">
+                  <span class="text-danger">24</span>
+                  <span class="text-muted px-1">:</span>
+                  <span class="text-success">31</span>
+                </span>
+              </div>
+              <div class="text-left team-name ml-2">
+                <strong>RK Krivaja</strong>
+                <div class="text-muted small">Gost</div>
+              </div>
+            </div>
+            <div class="text-center mt-2 location">
+              <i class="fas fa-map-marker-alt text-muted mr-1"></i>
+              <span class="small">Arena Zenica</span>
+            </div>
+          </div>
+          <div class="col-md-3 text-center">
+            <div class="btn-group btn-group-sm">
+              <button class="btn btn-outline-info">
+                <i class="fas fa-chart-bar"></i>
+              </button>
+              <button class="btn btn-outline-secondary">
+                <i class="fas fa-file-alt"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Past Match Item 3 -->
+      <div class="match-item p-3">
+        <div class="row align-items-center">
+          <div class="col-md-2 text-center mb-3 mb-md-0">
+            <div class="text-secondary small">10. Mar, 2025</div>
+            <div class="badge badge-light">Završeno</div>
+          </div>
+          <div class="col-md-7 mb-3 mb-md-0">
+            <div class="d-flex align-items-center justify-content-center">
+              <div class="text-right team-name mr-2">
+                <strong>HRK Izviđač</strong>
+                <div class="text-muted small">Domaćin</div>
+              </div>
+              <div class="match-score mx-3">
+                <span class="badge badge-light py-2 px-3 border">
+                  <span class="text-success">35</span>
+                  <span class="text-muted px-1">:</span>
+                  <span class="text-danger">28</span>
+                </span>
+              </div>
+              <div class="text-left team-name ml-2">
+                <strong>RK Bosna</strong>
+                <div class="text-muted small">Gost</div>
+              </div>
+            </div>
+            <div class="text-center mt-2 location">
+              <i class="fas fa-map-marker-alt text-muted mr-1"></i>
+              <span class="small">Gradska dvorana Ljubuški</span>
+            </div>
+          </div>
+          <div class="col-md-3 text-center">
+            <div class="btn-group btn-group-sm">
+              <button class="btn btn-outline-info">
+                <i class="fas fa-chart-bar"></i>
+              </button>
+              <button class="btn btn-outline-secondary">
+                <i class="fas fa-file-alt"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer text-center">
+      <a href="#" class="btn btn-sm btn-outline-secondary">
+        <i class="fas fa-history mr-1"></i> Prikaži više utakmica
+      </a>
+    </div>
+  </div>
+
+  <!-- Pagination -->
+  <nav aria-label="Page navigation" class="mt-4">
+    <ul class="pagination justify-content-center">
+      <li class="page-item disabled">
+        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">
+          <i class="fas fa-chevron-left"></i>
+        </a>
+      </li>
+      <li class="page-item active"><a class="page-link" href="#">1</a></li>
+      <li class="page-item"><a class="page-link" href="#">2</a></li>
+      <li class="page-item"><a class="page-link" href="#">3</a></li>
+      <li class="page-item">
+        <a class="page-link" href="#">
+          <i class="fas fa-chevron-right"></i>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Add Match Modal -->
+  <div class="modal fade" id="addMatchModal" tabindex="-1" aria-labelledby="addMatchModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="addMatchModalLabel">
+            <i class="fas fa-plus-circle mr-2 text-info"></i>
+            Zakaži novu utakmicu
+          </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="addMatchForm">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="matchDate">Datum</label>
+                <input type="date" class="form-control" id="matchDate" required>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="matchTime">Vrijeme</label>
+                <input type="time" class="form-control" id="matchTime" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="homeTeam">Domaći tim</label>
+              <select class="form-control" id="homeTeam" required>
+                <option value="">Odaberi domaći tim</option>
+                <option>RK Bosna</option>
+                <option>HRK Izviđač</option>
+                <option>RK Krivaja</option>
+                <option>ŽRK Hadžići</option>
+                <option>RK Čelik Junior</option>
+                <option>RK Sloboda</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="awayTeam">Gostujući tim</label>
+              <select class="form-control" id="awayTeam" required>
+                <option value="">Odaberi gostujući tim</option>
+                <option>RK Bosna</option>
+                <option>HRK Izviđač</option>
+                <option>RK Krivaja</option>
+                <option>ŽRK Hadžići</option>
+                <option>RK Čelik Junior</option>
+                <option>RK Sloboda</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="venue">Dvorana</label>
+              <select class="form-control" id="venue" required>
+                <option value="">Odaberi dvoranu</option>
+                <option>Dvorana Skenderija</option>
+                <option>Gradska dvorana Zavidovići</option>
+                <option>Sportska dvorana Hadžići</option>
+                <option>Arena Zenica</option>
+                <option>Gradska dvorana Ljubuški</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="matchNotes">Napomene</label>
+              <textarea class="form-control" id="matchNotes" rows="3" placeholder="Dodatne informacije o utakmici..."></textarea>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Odustani</button>
+          <button type="button" class="btn btn-info">
+            <i class="fas fa-calendar-check mr-1"></i> Zakaži utakmicu
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

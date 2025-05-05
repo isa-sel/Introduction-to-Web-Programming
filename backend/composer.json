@@ -1,0 +1,16 @@
+{
+    "name": "handball-league-management/api",
+    "description": "Handball League Management API",
+    "type": "project",
+    "require": {
+        "php": ">=7.4",
+        "flightphp/flight": "^2.0"
+    },
+    "autoload": {
+        "classmap": [
+            "dao/",
+            "services/",
+            "routes/"
+        ]
+    }
+}
