@@ -65,4 +65,21 @@ try {
     echo "<h3>Error:</h3>";
     echo "<p>" . $e->getMessage() . "</p>";
 }
+
+
+// Simple test to verify PHP is working
+echo json_encode([
+    'status' => 'success',
+    'message' => 'PHP is working',
+    'server_info' => [
+        'request_uri' => $_SERVER['REQUEST_URI'],
+        'script_name' => $_SERVER['SCRIPT_NAME'],
+        'php_version' => phpversion(),
+        'time' => date('Y-m-d H:i:s')
+    ]
+]);
+
+
 ?>
+
+
