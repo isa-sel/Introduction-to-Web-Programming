@@ -1,16 +1,20 @@
 {
-    "name": "handball-league-management/api",
-    "description": "Handball League Management API",
-    "type": "project",
-    "require": {
-        "php": ">=7.4",
-        "flightphp/flight": "^2.0"
-    },
+    "name": "ibu/web",
+    "description": "Handball league management web app",
     "autoload": {
-        "classmap": [
-            "dao/",
-            "services/",
-            "routes/"
-        ]
+        "psr-4": {
+            "Ibu\\Web\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Isa",
+            "email": "isa.selimovic@stu.ibu.edu.ba"
+        }
+    ],
+    "require": {
+        "mikecao/flight": "^3.15",
+        "firebase/php-jwt": "^6.11",
+        "vlucas/phpdotenv": "^5.6"
     }
 }
