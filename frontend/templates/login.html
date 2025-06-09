@@ -14,11 +14,17 @@
             <div class="form-group">
               <label for="email">Email adresa</label>
               <input type="email" class="form-control" id="email" placeholder="Unesite email" required>
+              <div class="invalid-feedback">
+                Molimo unesite važeću email adresu.
+              </div>
             </div>
             
             <div class="form-group">
               <label for="password">Lozinka</label>
-              <input type="password" class="form-control" id="password" placeholder="Unesite lozinku" required>
+              <input type="password" class="form-control" id="password" placeholder="Unesite lozinku" required minlength="6">
+              <div class="invalid-feedback">
+                Lozinka mora imati najmanje 6 karaktera.
+              </div>
             </div>
             
             <div class="form-group form-check">

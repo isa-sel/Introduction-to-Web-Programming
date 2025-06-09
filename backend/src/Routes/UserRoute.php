@@ -5,76 +5,123 @@ class UserRoute extends BaseRoute
 {
     protected function registerRoutes()
     {
-   
-        // LOGIN ruta
-        $this->app->route('POST /api/login', function() {
+        // Get all users - ADMIN ONLY
+        $this->app->route('GET /api/users', function() {
+            if (!$this->requireAdmin()) {
+                return;
+            }
+            
             try {
-                file_put_contents(__DIR__.'/login.log', "USAO U LOGIN\n", FILE_APPEND);
-        
-                $data = $this->getJsonBody();
-                file_put_contents(__DIR__.'/login.log', "DATA: ".print_r($data, true)."\n", FILE_APPEND);
-        
                 $userService = $this->serviceManager->get('user');
-                file_put_contents(__DIR__.'/login.log', "UZEO USERSERVICE\n", FILE_APPEND);
-        
-                $user = $userService->getByEmail($data['email']);
-                file_put_contents(__DIR__.'/login.log', "USER: ".print_r($user, true)."\n", FILE_APPEND);
-        
-                if (!$user) {
-                    $this->error("User not found", 401);
-                    return;
+                $users = $userService->getAll();
+                
+                // Remove passwords from response
+                foreach ($users as &$user) {
+                    unset($user['password']);
                 }
-                if (!isset($user['password'])) {
-                    $this->error("Password not found in user", 500);
-                    return;
-                }
-                if (!password_verify($data['password'], $user['password'])) {
-                    $this->error("Invalid credentials", 401);
-                    return;
-                }
-        
-                $this->success(['login' => 'OK']);
-            } catch (\Throwable $e) {
-                header('Content-Type: application/json');
-                http_response_code(500);
-                echo json_encode([
-                    "error" => true,
-                    "message" => $e->getMessage(),
-                    "trace" => $e->getTraceAsString()
-                ]);
-                file_put_contents(__DIR__.'/login.log', "ERROR: ".$e->getMessage()."\n", FILE_APPEND);
+                
+                $this->success($users);
+            } catch (\Exception $e) {
+                $this->error($e->getMessage(), 500);
             }
         });
         
-        // REGISTER ruta
-        $this->app->route('POST /api/register', function() {
-            $data = $this->getJsonBody();
-
-            // Minimalna validacija
-            if (empty($data['email']) || empty($data['password']) || empty($data['role'])) {
-                $this->error("Email, password and role are required", 400);
+        // Get user by ID - ADMIN ONLY (or own profile)
+        $this->app->route('GET /api/users/@id', function($id) {
+            if (!$this->requireAuth()) {
                 return;
             }
-
-            $userService = $this->serviceManager->get('user');
-            // Hash password-a
-            $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
-
-            // Kreiraj user-a
+            
+            $currentUser = $this->getCurrentUser();
+            
+            // Users can only view their own profile, admins can view any
+            if ($currentUser['role'] !== 'admin' && $currentUser['id'] != $id) {
+                $this->error('Access denied', 403);
+                return;
+            }
+            
             try {
-                $userId = $userService->register($data);
-                $user = $userService->getById($userId);
-
-                $this->success([
-                    'user' => [
-                        'id' => $user['id'],
-                        'email' => $user['email'],
-                        'role' => $user['role']
-                    ]
-                ], 201);
+                $userService = $this->serviceManager->get('user');
+                $user = $userService->getById($id);
+                unset($user['password']); // Never send password
+                
+                $this->success($user);
+            } catch (\Exception $e) {
+                $this->error($e->getMessage(), 404);
+            }
+        });
+        
+        // Update user - ADMIN ONLY (or own profile for basic info)
+        $this->app->route('PUT /api/users/@id', function($id) {
+            if (!$this->requireAuth()) {
+                return;
+            }
+            
+            $currentUser = $this->getCurrentUser();
+            $data = $this->getJsonBody();
+            
+            // Users can only update their own profile, admins can update any
+            if ($currentUser['role'] !== 'admin' && $currentUser['id'] != $id) {
+                $this->error('Access denied', 403);
+                return;
+            }
+            
+            // Regular users cannot change their role
+            if ($currentUser['role'] !== 'admin' && isset($data['role'])) {
+                unset($data['role']);
+            }
+            
+            try {
+                $userService = $this->serviceManager->get('user');
+                $userService->update($id, $data);
+                
+                $user = $userService->getById($id);
+                unset($user['password']);
+                
+                $this->success($user);
             } catch (\Exception $e) {
                 $this->error($e->getMessage(), 400);
             }
         });
+        
+        // Delete user - ADMIN ONLY
+        $this->app->route('DELETE /api/users/@id', function($id) {
+            if (!$this->requireAdmin()) {
+                return;
+            }
+            
+            try {
+                $userService = $this->serviceManager->get('user');
+                $userService->delete($id);
+                
+                $this->success(['message' => 'User deleted successfully']);
+            } catch (\Exception $e) {
+                $this->error($e->getMessage(), 400);
+            }
+        });
+        
+        // Get users by role - ADMIN ONLY
+        $this->app->route('GET /api/users/role/@role', function($role) {
+            if (!$this->requireAdmin()) {
+                return;
+            }
+            
+            try {
+                $userService = $this->serviceManager->get('user');
+                $users = $userService->getByRole($role);
+                
+                // Remove passwords from response
+                foreach ($users as &$user) {
+                    unset($user['password']);
+                }
+                
+                $this->success($users);
+            } catch (\Exception $e) {
+                $this->error($e->getMessage(), 400);
+            }
+        });
+        
+        // NOTE: Login and Register routes are handled in AuthRoute.php
+        // This UserRoute is for user management operations
     }
 }

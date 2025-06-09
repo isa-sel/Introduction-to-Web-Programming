@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="css/spapp.css">
     <link rel="stylesheet" href="css/style.css">
     <title>Rukometni Centar</title>
-    
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light">
@@ -92,11 +91,18 @@
         </div>
     </footer>
 
+    <!-- Scripts in correct order -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/jquery.spapp.min.js"></script>
-    <script src="js/main.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <!-- SPApp -->
+    <script src="js/jquery.spapp.min.js"></script>
+    
+    <!-- Auth Service  -->
+    <script src="js/auth-service.js"></script>
+    
+    <!-- Main app logic -->
+    <script src="js/main.js"></script>
   </body>
 </html>

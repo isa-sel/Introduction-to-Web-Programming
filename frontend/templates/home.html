@@ -19,7 +19,7 @@
       <div class="card stats-card h-100">
         <div class="card-body">
           <i class="fas fa-users fa-3x mb-3 text-info"></i>
-          <div class="value">8</div>
+          <div class="value" id="stats-teams">...</div>
           <div class="label">Aktivnih timova</div>
         </div>
       </div>
@@ -28,7 +28,7 @@
       <div class="card stats-card h-100">
         <div class="card-body">
           <i class="fas fa-calendar-alt fa-3x mb-3 text-info"></i>
-          <div class="value">24</div>
+          <div class="value" id="stats-matches">...</div>
           <div class="label">Nadolazećih utakmica</div>
         </div>
       </div>
@@ -37,7 +37,7 @@
       <div class="card stats-card h-100">
         <div class="card-body">
           <i class="fas fa-trophy fa-3x mb-3 text-info"></i>
-          <div class="value">125</div>
+          <div class="value" id="stats-players">...</div>
           <div class="label">Registrovanih igrača</div>
         </div>
       </div>
@@ -119,9 +119,15 @@
   
   <div class="card mt-4 mb-5">
     <div class="card-body text-center py-5">
-      <h3 class="mb-4">Pridružite se rukometnoj zajednici</h3>
-      <p class="lead mb-4">Registrujte se danas i počnite upravljati timovima, igračima i utakmicama u vašoj ligi.</p>
-      <a href="#register" class="btn btn-info btn-lg px-5">Registrujte se odmah</a>
+      <div id="joinSection">
+        <h3 class="mb-4">Pridružite se rukometnoj zajednici</h3>
+        <p class="lead mb-4">Registrujte se danas i počnite upravljati timovima, igračima i utakmicama u vašoj ligi.</p>
+        <a href="#register" class="btn btn-info btn-lg px-5" id="registerNowBtn">Registrujte se odmah</a>
+      </div>
+      <div id="thankYouSection" class="d-none">
+        <h3 class="mb-0">Hvala što ste član rukometne zajednice!</h3>
+      </div>
     </div>
   </div>
+  
 </div>

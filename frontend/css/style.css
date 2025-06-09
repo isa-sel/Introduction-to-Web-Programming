@@ -497,3 +497,35 @@ section p.lead {
     font-size: 0.9rem;
   }
 }
+
+/* === Samo za admina: tamnije plave nijanse na ključnim mjestima === */
+body.admin-theme .navbar,
+body.admin-theme .navbar-light {
+  background: linear-gradient(135deg, #10142c 0%, #18254d 100%) !important;
+}
+
+body.admin-theme .card-header.bg-info,
+body.admin-theme .btn-info,
+body.admin-theme .pagination .page-item.active .page-link,
+body.admin-theme .home-section,
+body.admin-theme .card .card-title,
+body.admin-theme .btn-outline-info:hover {
+  background-color: #1a233d !important;
+  border-color: #1a233d !important;
+  color: #f2f2f2 !important;
+}
+
+body.admin-theme .navbar-brand,
+body.admin-theme .navbar-light .navbar-nav .nav-link {
+  color: #b1cdf3 !important;
+}
+
+body.admin-theme .navbar-light .navbar-nav .nav-link:hover {
+  color: #fff !important;
+  background-color: rgba(60, 60, 120, 0.16);
+}
+
+body.admin-theme footer {
+  background-color: #181b2d;
+  color: #b6b6b6;
+}
