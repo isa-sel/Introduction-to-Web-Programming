@@ -10,7 +10,7 @@ try {
     echo "✗ Error loading .env: " . $e->getMessage() . "\n";
 }
 
-// Test user lookup
+// Test user looooookup
 try {
     $userService = new \Ibu\Web\Services\UserService();
     echo "✓ UserService created\n";

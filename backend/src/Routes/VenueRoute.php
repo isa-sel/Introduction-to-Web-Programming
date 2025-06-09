@@ -1,5 +1,6 @@
 <?php
 namespace Ibu\Web\Routes;
+
 /**
  * Venue Routes
  */
@@ -9,7 +10,7 @@ class VenueRoute extends BaseRoute {
      * Register venue routes
      */
     protected function registerRoutes() {
-        // Get all venues
+        // Get all venues - PUBLIC ACCESS
         $this->app->route('GET /api/venues', function() {
             try {
                 $venueService = $this->serviceManager->get('venue');
@@ -21,7 +22,7 @@ class VenueRoute extends BaseRoute {
             }
         });
         
-        // Get venue by ID
+        // Get venue by ID - PUBLIC ACCESS
         $this->app->route('GET /api/venues/@id', function($id) {
             try {
                 $venueService = $this->serviceManager->get('venue');
@@ -33,8 +34,12 @@ class VenueRoute extends BaseRoute {
             }
         });
         
-        // Create venue
+        // Create venue - ADMIN ONLY
         $this->app->route('POST /api/venues', function() {
+            if (!$this->requireAdmin()) {
+                return;
+            }
+            
             $data = $this->getJsonBody();
             
             $this->validateRequired($data, ['name', 'location', 'address', 'capacity']);
@@ -51,8 +56,12 @@ class VenueRoute extends BaseRoute {
             }
         });
         
-        // Update venue
+        // Update venue - ADMIN ONLY
         $this->app->route('PUT /api/venues/@id', function($id) {
+            if (!$this->requireAdmin()) {
+                return;
+            }
+            
             $data = $this->getJsonBody();
             
             try {
@@ -67,8 +76,12 @@ class VenueRoute extends BaseRoute {
             }
         });
         
-        // Delete venue
+        // Delete venue - ADMIN ONLY
         $this->app->route('DELETE /api/venues/@id', function($id) {
+            if (!$this->requireAdmin()) {
+                return;
+            }
+            
             try {
                 $venueService = $this->serviceManager->get('venue');
                 $venueService->delete($id);
@@ -79,7 +92,7 @@ class VenueRoute extends BaseRoute {
             }
         });
         
-        // Get venues by location
+        // Get venues by location - PUBLIC ACCESS
         $this->app->route('GET /api/venues/location/@location', function($location) {
             try {
                 $venueService = $this->serviceManager->get('venue');
@@ -91,7 +104,7 @@ class VenueRoute extends BaseRoute {
             }
         });
         
-        // Get venues by minimum capacity
+        // Get venues by minimum capacity - PUBLIC ACCESS
         $this->app->route('GET /api/venues/capacity/@capacity', function($capacity) {
             try {
                 $venueService = $this->serviceManager->get('venue');

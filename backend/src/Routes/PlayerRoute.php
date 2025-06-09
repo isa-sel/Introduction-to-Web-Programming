@@ -10,7 +10,7 @@ class PlayerRoute extends BaseRoute {
      * Register player routes
      */
     protected function registerRoutes() {
-        // Get all players
+        // Get all players - PUBLIC ACCESS
         $this->app->route('GET /api/players', function() {
             try {
                 $playerService = $this->serviceManager->get('player');
@@ -22,7 +22,7 @@ class PlayerRoute extends BaseRoute {
             }
         });
         
-        // Get player by ID
+        // Get player by ID - PUBLIC ACCESS
         $this->app->route('GET /api/players/@id', function($id) {
             try {
                 $playerService = $this->serviceManager->get('player');
@@ -34,8 +34,12 @@ class PlayerRoute extends BaseRoute {
             }
         });
         
-        // Create player
+        // Create player - ADMIN ONLY
         $this->app->route('POST /api/players', function() {
+            if (!$this->requireAdmin()) {
+                return;
+            }
+            
             $data = $this->getJsonBody();
             
             $this->validateRequired($data, [
@@ -55,8 +59,12 @@ class PlayerRoute extends BaseRoute {
             }
         });
         
-        // Update player
+        // Update player - ADMIN ONLY
         $this->app->route('PUT /api/players/@id', function($id) {
+            if (!$this->requireAdmin()) {
+                return;
+            }
+            
             $data = $this->getJsonBody();
             
             try {
@@ -71,8 +79,12 @@ class PlayerRoute extends BaseRoute {
             }
         });
         
-        // Delete player
+        // Delete player - ADMIN ONLY
         $this->app->route('DELETE /api/players/@id', function($id) {
+            if (!$this->requireAdmin()) {
+                return;
+            }
+            
             try {
                 $playerService = $this->serviceManager->get('player');
                 $playerService->delete($id);
@@ -83,7 +95,7 @@ class PlayerRoute extends BaseRoute {
             }
         });
         
-        // Get players by team
+        // Get players by team - PUBLIC ACCESS
         $this->app->route('GET /api/players/team/@teamId', function($teamId) {
             try {
                 $playerService = $this->serviceManager->get('player');
@@ -95,7 +107,7 @@ class PlayerRoute extends BaseRoute {
             }
         });
         
-        // Get players by position
+        // Get players by position - PUBLIC ACCESS
         $this->app->route('GET /api/players/position/@position', function($position) {
             try {
                 $playerService = $this->serviceManager->get('player');
@@ -107,7 +119,7 @@ class PlayerRoute extends BaseRoute {
             }
         });
         
-        // Get players by nationality
+        // Get players by nationality - PUBLIC ACCESS
         $this->app->route('GET /api/players/nationality/@nationality', function($nationality) {
             try {
                 $playerService = $this->serviceManager->get('player');

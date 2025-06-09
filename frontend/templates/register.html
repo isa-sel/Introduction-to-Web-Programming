@@ -6,25 +6,50 @@
           <h4 class="mb-0">Registracija</h4>
         </div>
         <div class="card-body p-4">
+          <!-- Error/Success Alert -->
+          <div id="registerAlert" class="alert d-none" role="alert"></div>
+          
           <form id="registerForm">
             <div class="form-group">
               <label for="fullName">Ime i prezime</label>
-              <input type="text" class="form-control" id="fullName" placeholder="Unesite vaše ime i prezime" required>
+              <input type="text" class="form-control" id="fullName" placeholder="Unesite vaše ime i prezime" required minlength="3">
+              <div class="invalid-feedback">
+                Ime i prezime mora imati najmanje 3 karaktera.
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="username">Korisničko ime</label>
+              <input type="text" class="form-control" id="username" placeholder="Unesite jedinstveno korisničko ime" required minlength="3" pattern="[a-zA-Z0-9_]+">
+              <small class="form-text text-muted">Samo slova, brojevi i _ su dozvoljeni</small>
+              <div class="invalid-feedback">
+                Korisničko ime mora imati najmanje 3 karaktera.
+              </div>
             </div>
             
             <div class="form-group">
               <label for="email">Email adresa</label>
               <input type="email" class="form-control" id="email" placeholder="Unesite email" required>
+              <div class="invalid-feedback">
+                Molimo unesite važeću email adresu.
+              </div>
             </div>
             
             <div class="form-group">
               <label for="password">Lozinka</label>
-              <input type="password" class="form-control" id="password" placeholder="Unesite lozinku" required>
+              <input type="password" class="form-control" id="password" placeholder="Unesite lozinku" required minlength="6">
+              <small class="form-text text-muted">Lozinka mora imati najmanje 6 karaktera</small>
+              <div class="invalid-feedback">
+                Lozinka mora imati najmanje 6 karaktera.
+              </div>
             </div>
             
             <div class="form-group">
               <label for="confirmPassword">Potvrdite lozinku</label>
               <input type="password" class="form-control" id="confirmPassword" placeholder="Potvrdite lozinku" required>
+              <div class="invalid-feedback">
+                Lozinke se ne poklapaju.
+              </div>
             </div>
             
             <div class="form-group">
@@ -33,6 +58,9 @@
                 <label class="custom-control-label" for="agreeTerms">
                   Slažem se sa uslovima korištenja
                 </label>
+                <div class="invalid-feedback">
+                  Morate prihvatiti uslove korištenja.
+                </div>
               </div>
             </div>
             

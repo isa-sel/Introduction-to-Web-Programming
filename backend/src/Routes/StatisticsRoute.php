@@ -1,5 +1,6 @@
 <?php
 namespace Ibu\Web\Routes;
+
 /**
  * Statistics Routes
  */
@@ -9,7 +10,7 @@ class StatisticsRoute extends BaseRoute {
      * Register statistics routes
      */
     protected function registerRoutes() {
-        // Get all statistics
+        // Get all statistics - PUBLIC ACCESS
         $this->app->route('GET /api/statistics', function() {
             try {
                 $statisticsService = $this->serviceManager->get('statistics');
@@ -21,7 +22,7 @@ class StatisticsRoute extends BaseRoute {
             }
         });
         
-        // Get statistics by ID
+        // Get statistics by ID - PUBLIC ACCESS
         $this->app->route('GET /api/statistics/@id', function($id) {
             try {
                 $statisticsService = $this->serviceManager->get('statistics');
@@ -33,8 +34,12 @@ class StatisticsRoute extends BaseRoute {
             }
         });
         
-        // Create statistics
+        // Create statistics - ADMIN ONLY
         $this->app->route('POST /api/statistics', function() {
+            if (!$this->requireAdmin()) {
+                return;
+            }
+            
             $data = $this->getJsonBody();
             
             $this->validateRequired($data, ['match_id', 'player_id']);
@@ -51,8 +56,12 @@ class StatisticsRoute extends BaseRoute {
             }
         });
         
-        // Update statistics
+        // Update statistics - ADMIN ONLY
         $this->app->route('PUT /api/statistics/@id', function($id) {
+            if (!$this->requireAdmin()) {
+                return;
+            }
+            
             $data = $this->getJsonBody();
             
             try {
@@ -67,8 +76,12 @@ class StatisticsRoute extends BaseRoute {
             }
         });
         
-        // Delete statistics
+        // Delete statistics - ADMIN ONLY
         $this->app->route('DELETE /api/statistics/@id', function($id) {
+            if (!$this->requireAdmin()) {
+                return;
+            }
+            
             try {
                 $statisticsService = $this->serviceManager->get('statistics');
                 $statisticsService->delete($id);
@@ -79,7 +92,7 @@ class StatisticsRoute extends BaseRoute {
             }
         });
         
-        // Get statistics by match
+        // Get statistics by match - PUBLIC ACCESS
         $this->app->route('GET /api/statistics/match/@matchId', function($matchId) {
             try {
                 $statisticsService = $this->serviceManager->get('statistics');
@@ -91,7 +104,7 @@ class StatisticsRoute extends BaseRoute {
             }
         });
         
-        // Get statistics by player
+        // Get statistics by player - PUBLIC ACCESS
         $this->app->route('GET /api/statistics/player/@playerId', function($playerId) {
             try {
                 $statisticsService = $this->serviceManager->get('statistics');
@@ -103,7 +116,7 @@ class StatisticsRoute extends BaseRoute {
             }
         });
         
-        // Get top scorers
+        // Get top scorers - PUBLIC ACCESS
         $this->app->route('GET /api/statistics/top-scorers/@limit', function($limit) {
             try {
                 $statisticsService = $this->serviceManager->get('statistics');
@@ -115,7 +128,7 @@ class StatisticsRoute extends BaseRoute {
             }
         });
         
-        // Get player efficiency
+        // Get player efficiency - PUBLIC ACCESS
         $this->app->route('GET /api/statistics/player/@playerId/efficiency', function($playerId) {
             try {
                 $statisticsService = $this->serviceManager->get('statistics');

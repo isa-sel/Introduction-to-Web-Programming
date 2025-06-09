@@ -10,8 +10,6 @@ class UserService {
     }
 
     public function getByUsername($username) {
-        // Your implementation here
-        // For example:
         return $this->dao->getByUsername($username);
     }
 
@@ -28,8 +26,10 @@ class UserService {
         if ($this->dao->getByUsername($data['username'])) {
             throw new \Exception("Korisnik sa ovim username-om već postoji.");
         }
-        // Hashiraj lozinku
-        $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
+        
+        // DON'T hash password here - it's already hashed in AuthRoute
+        // REMOVED: $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
+        
         // Dodaj korisnika (poziva create iz BaseDao)
         return $this->dao->insert($data);
     }

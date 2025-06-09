@@ -1,5 +1,6 @@
 <?php
 namespace Ibu\Web\Routes;
+
 /**
  * Match Routes
  */
@@ -9,7 +10,7 @@ class MatchRoute extends BaseRoute {
      * Register match routes
      */
     protected function registerRoutes() {
-        // Get all matches
+        // Get all matches - PUBLIC ACCESS
         $this->app->route('GET /api/matches', function() {
             try {
                 $matchService = $this->serviceManager->get('match');
@@ -21,7 +22,7 @@ class MatchRoute extends BaseRoute {
             }
         });
         
-        // Get match by ID
+        // Get match by ID - PUBLIC ACCESS
         $this->app->route('GET /api/matches/@id', function($id) {
             try {
                 $matchService = $this->serviceManager->get('match');
@@ -33,8 +34,12 @@ class MatchRoute extends BaseRoute {
             }
         });
         
-        // Create match
+        // Create match - ADMIN ONLY
         $this->app->route('POST /api/matches', function() {
+            if (!$this->requireAdmin()) {
+                return;
+            }
+            
             $data = $this->getJsonBody();
             
             $this->validateRequired($data, ['home_team_id', 'away_team_id', 'venue_id', 'match_time']);
@@ -51,8 +56,12 @@ class MatchRoute extends BaseRoute {
             }
         });
         
-        // Update match
+        // Update match - ADMIN ONLY
         $this->app->route('PUT /api/matches/@id', function($id) {
+            if (!$this->requireAdmin()) {
+                return;
+            }
+            
             $data = $this->getJsonBody();
             
             try {
@@ -67,8 +76,12 @@ class MatchRoute extends BaseRoute {
             }
         });
         
-        // Delete match
+        // Delete match - ADMIN ONLY
         $this->app->route('DELETE /api/matches/@id', function($id) {
+            if (!$this->requireAdmin()) {
+                return;
+            }
+            
             try {
                 $matchService = $this->serviceManager->get('match');
                 $matchService->delete($id);
@@ -79,8 +92,12 @@ class MatchRoute extends BaseRoute {
             }
         });
         
-        // Update match result
+        // Update match result - ADMIN ONLY
         $this->app->route('PUT /api/matches/@id/result', function($id) {
+            if (!$this->requireAdmin()) {
+                return;
+            }
+            
             $data = $this->getJsonBody();
             
             $this->validateRequired($data, ['home_score', 'away_score']);
@@ -99,7 +116,7 @@ class MatchRoute extends BaseRoute {
             }
         });
         
-        // Get matches by team
+        // Get matches by team - PUBLIC ACCESS
         $this->app->route('GET /api/matches/team/@teamId', function($teamId) {
             try {
                 $matchService = $this->serviceManager->get('match');
@@ -111,7 +128,7 @@ class MatchRoute extends BaseRoute {
             }
         });
         
-        // Get matches by venue
+        // Get matches by venue - PUBLIC ACCESS
         $this->app->route('GET /api/matches/venue/@venueId', function($venueId) {
             try {
                 $matchService = $this->serviceManager->get('match');
@@ -123,7 +140,7 @@ class MatchRoute extends BaseRoute {
             }
         });
         
-        // Get matches by status
+        // Get matches by status - PUBLIC ACCESS
         $this->app->route('GET /api/matches/status/@status', function($status) {
             try {
                 $matchService = $this->serviceManager->get('match');
@@ -135,7 +152,7 @@ class MatchRoute extends BaseRoute {
             }
         });
         
-        // Get upcoming matches
+        // Get upcoming matches - PUBLIC ACCESS
         $this->app->route('GET /api/matches/upcoming/@limit', function($limit) {
             try {
                 $matchService = $this->serviceManager->get('match');
